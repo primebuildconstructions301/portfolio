@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wassim Derbieh - Civil Engineer</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; line-height:1.6; color:#333; background:#f9f9f9; }
+  a { text-decoration:none; color:#0a74da; }
+  a:hover { text-decoration:underline; }
+  header { background:#0a74da; color:white; padding:60px 20px; text-align:center; }
+  header h1 { font-size:3em; margin-bottom:10px; }
+  header p { font-size:1.3em; }
+  nav { background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
+  nav ul { list-style:none; display:flex; justify-content:center; flex-wrap:wrap; padding:10px 0; }
+  nav ul li { margin:0 15px; }
+  nav ul li a { font-weight:bold; color:#333; }
+  nav ul li a:hover { color:#0a74da; }
+  section { padding:60px 20px; max-width:1200px; margin:auto; }
+  h2 { color:#0a74da; margin-bottom:30px; font-size:2em; text-align:center; }
+  #about p { max-width:900px; margin:auto 0 40px; text-align:center; font-size:1.1em; }
+  .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+  .skill { background:#fff; padding:20px; border-radius:8px; flex:1 1 300px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+  .project { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 15px rgba(0,0,0,0.1); transition: transform 0.2s; }
+  .project:hover { transform: translateY(-5px); }
+  .project img { width:100%; height:200px; object-fit:cover; }
+  .project-content { padding:20px; }
+  .project-content h3 { margin-bottom:10px; color:#0a74da; }
+  .project-content p { font-size:0.95em; }
+  .contact-info { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+  .contact-info div { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.05); flex:1 1 250px; text-align:center; }
+  footer { background:#222; color:white; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wassim Derbieh</h1>
+  <p>Civil Engineer | Project & Field Manager</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a Civil Engineer with 4+ years of experience in building construction, interior & exterior installations, roofing, aluminum and steel systems, and façade works. I specialize in managing projects from design to execution, ensuring quality, safety, and efficiency.</p>
+  
+  <div class="skills">
+    <div class="skill"><strong>Construction & Structures:</strong> Concrete & steel, roofing systems, gutters</div>
+    <div class="skill"><strong>Interior Works:</strong> Gypsum, PVC, aluminum ceilings, kitchens, tiling, WPC panels</div>
+    <div class="skill"><strong>Aluminum & Steel Works:</strong> Doors, windows, partitions, handrails</div>
+    <div class="skill"><strong>Exterior Façades:</strong> Curtain walls, Alubond cladding, louvers, decorative façades</div>
+    <div class="skill"><strong>Software:</strong> AutoCAD, Civil 3D, SketchUp, Lumion, Revit, ETABS, SAP2000, SAFE</div>
+    <div class="skill"><strong>Soft Skills:</strong> Leadership, project coordination, client communication</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Selected Projects</h2>
+  <div class="projects" id="project-container">
+    <!-- Project cards will be inserted here by JavaScript -->
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-info">
+    <div><strong>Email:</strong> <a href="mailto:wsmderbieh@gmail.com">wsmderbieh@gmail.com</a></div>
+    <div><strong>Phone:</strong> +961 81 674 306</div>
+    <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/wmdrb/" target="_blank">Wassim Derbieh</a></div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Wassim Derbieh | Lebanese | Arabic & English
+</footer>
+
+<script>
+  // JavaScript to automatically load project images and info
+  const projects = [
+    {title:"MDMC Hotel – Liberia", desc:"Project & Field Manager | Façade works, interior & exterior installations, roofing, gutters | Tools: AutoCAD, SketchUp, Lumion | Budget: $5M+", img:"projects/mdmc-hotel.jpg"},
+    {title:"Wave Project, NOCAL, Orange Building, Fouani", desc:"Project & Field Manager | Full interior & exterior fit-out, aluminum & steel works, structural supervision", img:"projects/wave-project.jpg"},
+    {title:"Dalma Gas Development – UAE", desc:"Draftsman & Quantity Surveyor | Shop drawings, earthwork calculations, reinforced concrete support", img:"projects/dalma-gas.jpg"}
+  ];
+
+  const container = document.getElementById('project-container');
+
+  projects.forEach(p=>{
+    const card = document.createElement('div');
+    card.className = 'project';
+    card.innerHTML = `<img src="${p.img}" alt="${p.title}"><div class="project-content"><h3>${p.title}</h3><p>${p.desc}</p></div>`;
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
